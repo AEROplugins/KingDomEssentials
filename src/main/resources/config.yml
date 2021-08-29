@@ -1,0 +1,165 @@
+Menssagens-do-sistema:
+  sem-permissao: '&cVoce nao tem Permissao!' #Msg de sem permissao geral de todos os comandos desse plugin
+  menssagen-cooldown: '&cEspere %cd% segundos para utilizar este comando denovo!' #Quando um comando com cooldown e usado
+  warp-nao-existe: '&cA warp ''%warp%'' nao existe! Abrindo lista..'
+  warp-teleport-msg: '&eVoce foi teleportado para a %warp%'
+  menu-warp-ao-abrir: '&eA lista de warps foi aberta!'
+  sethome-maximo-homes: '&eVoce bateu o Limite de homes!'
+  sethome-sem-argumentos: '&cVoce precisa dizer o nome da sua Home! Ex:/sethome casa1'
+  sethome-home-ja-existe: '&cEssa home ja existe! Delete-a e crie novamente caso queira mudar de lugar'
+  sethome-home-criada: "&eHome '%home%' criada com sucesso!"
+  sethome-home-criada-erro: "&cUm nome nao permitido foi colocado!"
+  listhome-mostrando-lista: '&eAbaixo estao todas as suas Homes:'
+  listhome-sem-homes: '&cVoce ainda nao marcou nenhuma Home!'
+  delhome-sem-homes: '&cVoce nao tem nenhuma home para excluir!'
+  delhome-sucesso: "&eA Home '%home%' foi excluida com sucesso!"
+  delhome-erro: '&cErro ao deletar a sua Home!'
+  delhome-home-nao-existe: "&ca Home '%home%' nao existe!"
+  home-teleporte-msg: "&eVoce sera teletransportado para sua home em %cd% segundos"
+  home-nao-existe: "&cA Home '%home%' nao existe!"
+  home-argumento-errado: "&cUso correto: /home <nome>"
+  home-teleporte-sucesso: "&eVoce foi teleportado para a home '%home%'!"
+  proibido-marcar-home: "&cVoce nao pode marcar Home neste Mundo!"
+  maximo-de-spawners: "&cEssa Regiao ja esta com o Maximo de Spawners!"
+
+Boas-vindas:
+  title: "&9KingDomRo"
+  sub-title: "&7Seja bem-vindo!"
+
+Comandos-config:
+  cooldown-global: 5
+  max-homes: 5 #NAO RECOMENDAVEL AUMENTAR ISSO PARA COMPATIBILIDADE FUTURA COM AS GUIS
+  home-delay: 3
+  home-vipdelay: 1
+
+
+Npcs: #Coloque o nome do npc (tem que colocar os simbolos de cores tambem!)
+  warp-npc: '§4§lViajante'
+
+Warps-configs: # SERVE PARA TODAS AS WARPS
+  sem-perm-warp: '&cApenas vips podem usar o /warps! procure os Npcs de viagem rápida'
+  delay-msg: "&eVoce sera teletransportado em %delay% segundo's"  #msg do delay do teleport
+  warp-sem-perm: "&cVoce nao pode ir nesta Warp!"
+  cooldown: 5 #/warp cooldown de comando
+  delay: 3  #delay para ir ate o warp
+  vip-delay: 1 #delay do vip para ir ate a warp
+Menu-configs:
+  abrir: "&eO Menu foi Aberto!"
+  delay-msg: "&eO Menu sera Aberto nos proximos %delay% segundos!"
+  delay: 3 # VIP NAO TEM DELAY!
+  cooldown: 5 #/menu cooldown
+
+
+
+
+Configs-Spawn:
+  spawn-title-msg: '&9&lSpawn' #title de quando e teleportado para o spawn
+  spawn-subtitle-msg: '&7Bem-vindo ao spawn' #subtitle de quando e teleportado para o spawn
+  spawn-delay-msg: "&eVoce ira para o Spawn em %delay% segundo's!" #/spawn delay msg
+  cooldown: 5 #/spawn cooldown de comando
+  delay: 3 #delay para ir ate o spawn
+  vip-delay: 1 #delay do vip para ir ate o spawn
+
+Gui-config: #PODE SER ADICIONADO QUANTAS LORES VOCE QUERER!
+  menu:
+    player_nome: "&9&l%player%"
+    player_lore:
+      - "&fbanco: &2%banco%"
+      - "&fgrupo: &2%grupo%"
+    lobby_nome: "lobbyvip"
+    lobby_lore:
+      - "test"
+      - "test2"
+    sethome_nome: "sethome"
+    sethome_lore:
+      - "test"
+      - "test2"
+    clan_nome: "clan"
+    clan_lore:
+      - "test"
+      - "test2"
+    jobs_nome: "jobs"
+    jobs_lore:
+      - "test"
+      - "test2"
+    pets_nome: "pets"
+    pets_lore:
+      - "test"
+      - "test2"
+    enderchest_nome: "enderchest"
+    enderchest_lore:
+      - "test"
+      - "test2"
+    kits_nome: "kits"
+    kits_lore:
+      - "test"
+      - "test2"
+    backpack_nome: "backpack"
+    backpack_lore:
+      - "test"
+      - "test2"
+    warpvips_nome: "warpvips"
+    warpvips_lore:
+      - "test"
+      - "test2"
+    shopvip_nome: "shopvip"
+    shopvip_lore:
+      - "test"
+      - "test2"
+  warp:
+    end-name: "&e   - -=- ✪ - &e&lEnd &e- ✪ -=- -"
+    end-lore:
+      - ""
+      - "&7  Essa opção te levará para   "
+      - "&7  O mundo do &5Ender Dragon&7.  "
+      - ""
+      - "&c  PvP: &2✔                 "
+      - ""
+    lobby-name: "&e   - -=- ✪ - &e&lLobby &e- ✪ -=- -  "
+    lobby-lore:
+      - ""
+      - "&7  Essa opção te levará para   "
+      - "&7  O mundo do &9Spawn&7.  "
+      - ""
+      - "&c  PvP: &2✘                 "
+      - ""
+    minerar-name: "&e   - -=- ✪ - &e&lMinerar &e- ✪ -=- -  "
+    minerar-lore:
+      - ""
+      - "&7  Essa opção te levará para   "
+      - "&7  O mundo de &3Minerar&7.  "
+      - ""
+      - "&c  PvP: &2✔"
+      - ""
+    nether-name: "&e   - -=- ✪ - &e&lNether &e- ✪ -=- -  "
+    nether-lore:
+      - ""
+      - "&7  Essa opção te levará para   "
+      - "&7  O mundo do &cNether&7.  "
+      - ""
+      - "&c  PvP: &2✔"
+      - ""
+    bricks-name: "&e   - -=- ✪ - &e&lSurvival &e- ✪ -=- -  "
+    bricks-lore:
+      - ""
+      - "&7  Essa opção te levará para   "
+      - "&7  O mundo do &2Survival&7.  "
+      - ""
+      - "&c  PvP: &2Apenas a Noite!"
+      - ""
+    arena-name: "&e   - -=- ✪ - &e&lArena &e- ✪ -=- -  "
+    arena-lore:
+      - ""
+      - "&7  Essa opção te levará para   "
+      - "&7  O mundo da &4Arena&7.  "
+      - ""
+      - "&c  PvP: &2✔"
+      - ""
+    eventos-name: "&e   - -=- ✪ - &e&lEventos &e- ✪ -=- -  "
+    eventos-lore:
+      - ""
+      - "&7  Essa opção te levará para   "
+      - "&7  O mundo da &5Eventos&7.  "
+      - ""
+      - "&c  PvP: &2✘                 "
+      - ""

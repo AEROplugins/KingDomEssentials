@@ -1,0 +1,44 @@
+name: KingDomRoSystem
+version: 0.1
+main: aero.system.System
+api-version: 1.17
+softdepend:
+  - Vault
+
+commands:
+  setspawn:
+    aliases: criarspawn
+    description: cria o spawn principal do servidor!
+  spawn:
+    aliases: lobby
+    description: te leva para o spawn
+  setwarp:
+    aliases: criarwarp
+    description: cria uma warp
+  warp:
+    aliases: warps
+    description: vai ate uma warp
+  teste:
+    aliases: criarnpc
+    description: cria um npc
+  system:
+    aliases: essentials
+    description: comandos perigosos kk
+  menu:
+    description: menu do servidor
+  painel:
+    aliases: gamemode
+  enderchest:
+    description: abre seu bau do fim
+  sethome:
+    description: cria uma home
+    aliases: criarcasa
+  listhome:
+    description: lista suas homes
+    aliases: listhomes
+  delhome:
+    description: deleta uma home caso exista
+    aliases: deletarcasa
+  home:
+    description: leva voce ate sua home
+    aliases: casa
