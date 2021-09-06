@@ -18,9 +18,6 @@ commands:
   warp:
     aliases: warps
     description: vai ate uma warp
-  teste:
-    aliases: criarnpc
-    description: cria um npc
   system:
     aliases: essentials
     description: comandos perigosos kk

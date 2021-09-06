@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerTeleportEvent;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -112,7 +113,7 @@ public class Warp implements CommandExecutor {
         try {
             // CASO A WARP SEJA VALIDA (REALMENTE EXISTA)
             p.getWorld().spawnParticle(Particle.DRAGON_BREATH,p.getLocation(),250);
-            p.teleport(pegarLocalWarp(warp));
+            p.teleport(pegarLocalWarp(warp), PlayerTeleportEvent.TeleportCause.PLUGIN);
             p.sendMessage(ConfigPrincipal.warp_teleport_msg
                     .replace("%warp%", Objects.requireNonNull(getWarp.getString("warps." + warp + ".display-name"))
                             .replace("&","§")));

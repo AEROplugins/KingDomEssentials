@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="KingDomRoSystem">
-    <output-path>$USER_HOME$/Desktop/KingDomUPDATE</output-path>
+    <output-path>$USER_HOME$/Desktop/SERVIDOR RELACIONAL/Teste/KingDomUPDATE</output-path>
     <root id="archive" name="KingDomRoSystem.jar">
       <element id="module-output" name="KingDomRoSystem" />
     </root>

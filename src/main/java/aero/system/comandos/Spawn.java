@@ -8,6 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerTeleportEvent;
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -108,7 +109,7 @@ public class Spawn implements CommandExecutor {
     // Envia a msg de teleporte do spawn
    public static void spawnTeleportMSG(Player p){
        try {
-           p.teleport(pegarSpawnLoc());
+           p.teleport(pegarSpawnLoc(), PlayerTeleportEvent.TeleportCause.PLUGIN);
            p.spawnParticle(Particle.REVERSE_PORTAL,p.getLocation(),100);
            MetodosSimples.enviarTitleESom(p, ConfigPrincipal.title_spawn_teleport,
                    ConfigPrincipal.subtitle_spawn_teleport, Sound.ENTITY_PLAYER_LEVELUP, 1);

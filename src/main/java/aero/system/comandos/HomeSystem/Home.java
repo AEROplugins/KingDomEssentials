@@ -11,6 +11,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerTeleportEvent;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -64,17 +65,17 @@ public class Home implements CommandExecutor {
                     MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.home_teleporte_msg
                             .replace("%cd%",""+getSystem().getConfig().getInt("Comandos-config.home-vipdelay")
                             ), Sound.ENTITY_PLAYER_LEVELUP, 1);
-                    Bukkit.getScheduler().scheduleSyncDelayedTask(getSystem(),() -> TeleportarParaHome(p,homeLocation,args),
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(getSystem(),() -> TeleportarParaHome(p,homeLocation,args[0]),
                             20L*getSystem().getConfig().getInt("Comandos-config.home-vipdelay"));
                 }else{
                     MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.home_teleporte_msg
                             .replace("%cd%",""+getSystem().getConfig().getInt("Comandos-config.home-delay")
                             ), Sound.ENTITY_PLAYER_LEVELUP, 1);
-                    Bukkit.getScheduler().scheduleSyncDelayedTask(getSystem(),() -> TeleportarParaHome(p,homeLocation,args),
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(getSystem(),() -> TeleportarParaHome(p,homeLocation,args[0]),
                             20L*getSystem().getConfig().getInt("Comandos-config.home-delay"));
                 }
             }else{
-                TeleportarParaHome(p,homeLocation,args);
+                TeleportarParaHome(p,homeLocation,args[0]);
             }
             return true;
         }else{
@@ -83,11 +84,12 @@ public class Home implements CommandExecutor {
         }
     }
 
-    private void TeleportarParaHome(Player p,Location homeLocation,String[] args){
-        p.teleport(homeLocation);
-        MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.home_teleporte_sucesso.replace("%home%",""+args[0])
+    public static void TeleportarParaHome(Player p,Location homeLocation,String args){
+        p.teleport(homeLocation, PlayerTeleportEvent.TeleportCause.PLUGIN);
+        MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.home_teleporte_sucesso.replace("%home%",""+args)
                 ,Sound.ENTITY_PLAYER_LEVELUP,1);
     }
+
 
     // PEGA O COOLDOWN E RETORNA EM SEGUNDOS
     private Long pegarCooldown(Player p){

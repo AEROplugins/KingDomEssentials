@@ -61,6 +61,12 @@ Configs-Spawn:
   vip-delay: 1 #delay do vip para ir ate o spawn
 
 Gui-config: #PODE SER ADICIONADO QUANTAS LORES VOCE QUERER!
+  listhomes:
+    homes_lores:
+      - ''
+      - "&8&l * &fAo clicar você será teletransportado"
+      - "&8&l * &fPara a sua home '&e&l%home%&f'"
+      - ''
   menu:
     player_nome: "&9&l%player%"
     player_lore:

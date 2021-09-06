@@ -15,6 +15,7 @@ import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -107,7 +108,14 @@ public class System extends JavaPlugin {
     }
 
     private void carregarStartMSG(){
-        Bukkit.getConsoleSender().sendMessage("§2[System] Plugin Iniciado com Sucesso!");
+        getLogger().info(ChatColor.BLUE+"\n╭╮╭━╮╱╱╱╱╱╱╭━━━╮╱╱╱╱╱╭━━━╮╱╱╭━━━╮╱╱╱╱╱╱╭╮\n" +
+                "┃┃┃╭╯╱╱╱╱╱╱╰╮╭╮┃╱╱╱╱╱┃╭━╮┃╱╱┃╭━╮┃╱╱╱╱╱╭╯╰╮\n" +
+                "┃╰╯╯╭┳━╮╭━━╮┃┃┃┣━━┳╮╭┫╰━╯┣━━┫╰━━┳╮╱╭┳━┻╮╭╋━━┳╮╭╮\n" +
+                "┃╭╮┃┣┫╭╮┫╭╮┃┃┃┃┃╭╮┃╰╯┃╭╮╭┫╭╮┣━━╮┃┃╱┃┃━━┫┃┃┃━┫╰╯┃\n" +
+                "┃┃┃╰┫┃┃┃┃╰╯┣╯╰╯┃╰╯┃┃┃┃┃┃╰┫╰╯┃╰━╯┃╰━╯┣━━┃╰┫┃━┫┃┃┃\n" +
+                "╰╯╰━┻┻╯╰┻━╮┣━━━┻━━┻┻┻┻╯╰━┻━━┻━━━┻━╮╭┻━━┻━┻━━┻┻┻╯\n" +
+                "╱╱╱╱╱╱╱╱╭━╯┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃\n" +
+                "╱╱╱╱╱╱╱╱╰━━╯╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯");
     }
 
     private boolean setupEconomy() {

@@ -1,8 +1,10 @@
 package aero.system.guis;
 
+import aero.system.System;
 import aero.system.config.ConfigPrincipal;
 import aero.system.utilidades.MetodosSimples;
 import aero.system.utilidades.SkullBuilder;
+import aero.system.utilidades.criadordegui.menu.InventoryListener;
 import aero.system.utilidades.criadordegui.menu.Menu;
 import aero.system.utilidades.items.ItemBuilder;
 import aero.system.utilidades.items.skullcreator.SkullCreator;
@@ -45,6 +47,11 @@ public class MenuServidor extends Menu {
         }
         if(Objects.requireNonNull(event.getCurrentItem().getItemMeta()).getDisplayName().equalsIgnoreCase(ConfigPrincipal.backpack_nome)){
             Bukkit.dispatchCommand(p,"backpack");
+        }
+        if(event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ConfigPrincipal.sethome_nome)){
+            new HomeMenu(p).open(p);
+            MetodosSimples.tocarSom(p,Sound.ENTITY_PLAYER_LEVELUP,1);
+            gui_protection = true;
         }
     }
 
