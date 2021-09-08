@@ -21,6 +21,7 @@ Menssagens-do-sistema:
   home-teleporte-sucesso: "&eVoce foi teleportado para a home '%home%'!"
   proibido-marcar-home: "&cVoce nao pode marcar Home neste Mundo!"
   maximo-de-spawners: "&cEssa Regiao ja esta com o Maximo de Spawners!"
+  kit-nao-existe: "&cEste Kit '%kit_display%' nao existe! verifique os kits no /menu!"
 
 Boas-vindas:
   title: "&9KingDomRo"

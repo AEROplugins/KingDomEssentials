@@ -91,6 +91,7 @@ public class ConfigPrincipal {
     public static String spawner_chunk_limit_msg;
     public static String boas_vindas_title;
     public static String boas_vindas_subtitle;
+    public static String kit_nao_existe;
 
     // CARREGA O DADO DE TODAS AS STRINGS DA CONFIG
     public static void carregarDadosConfig(){
@@ -136,6 +137,7 @@ public class ConfigPrincipal {
         spawner_chunk_limit_msg = converter("Menssagens-do-sistema.maximo-de-spawners");
         boas_vindas_title = converter("Boas-vindas.title");
         boas_vindas_subtitle = converter("Boas-vindas.sub-title");
+        kit_nao_existe = converter("Menssagens-do-sistema.kit-nao-existe");
 
         // WARP GUI CARREGAMENTOS
 

@@ -1,9 +1,6 @@
 package aero.system.utilidades.criadordegui.menu;
 
 import aero.system.System;
-import aero.system.guis.WarpGui;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,15 +9,10 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.ItemStack;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
 
 public class InventoryListener implements Listener
 {
+
     @EventHandler
     public void onClick(InventoryClickEvent event)
     {

@@ -18,6 +18,10 @@
             <url>https://jitpack.io</url>
         </repository>
         <repository>
+            <id> chestshop-repo </id>
+            <url> https://repo.minebench.de/ </url>
+        </repository>
+        <repository>
             <id>minecraft-repo</id>
             <url>https://libraries.minecraft.net/</url>
         </repository>
@@ -34,6 +38,12 @@
             <artifactId>spigot-api</artifactId>
             <version>1.17-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId> com.acrobot.chestshop </groupId>
+            <artifactId> chestshop </artifactId>
+            <version> 3.12 </version>
+            <scope> fornecido </scope>
         </dependency>
         <dependency>
             <groupId>com.mojang</groupId>

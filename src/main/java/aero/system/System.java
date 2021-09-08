@@ -10,38 +10,56 @@ import aero.system.eventos.EntrarSairEventos;
 import aero.system.eventos.NPCgui;
 import aero.system.eventos.TituloDeBoasVindas;
 import aero.system.protections.*;
+import aero.system.utilidades.CooldownManager;
 import aero.system.utilidades.criadordegui.menu.InventoryListener;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 
 public class System extends JavaPlugin {
+    private CooldownManager cooldownManager;
     private static Chat chat = null;
     private static Permission perms = null;
     private static Economy econ = null;
     public static boolean gui_protection = false;
     private static System system;
     private PlayerData playerData;
+    private Kits kits;
     private WarpLocations warpLocations;
     private Locations locations;
+    private CooldownManagerConfig cooldownManagerConfig;
     @Override
     public void onEnable() {
         system = this;
         carregarConfig();
+        cooldownManager = new CooldownManager();
+        cooldownManagerConfig = new CooldownManagerConfig();
+        PegarCooldownArmazenado();
         warpLocations = new WarpLocations();
         playerData = new PlayerData();
         locations = new Locations();
+        kits = new Kits();
         ConfigPrincipal.carregarDadosConfig();
         carregarVaultDependencias();
         carregarComandos();
         carregarEventos();
         carregarStartMSG();
+    }
+
+    @Override
+    public void onDisable() {
+        SalvarCooldown();
     }
 
     public static System getSystem() {
@@ -69,13 +87,17 @@ public class System extends JavaPlugin {
     public FileConfiguration getPlayerData(){
         return playerData.getConfig();
     }
+    public FileConfiguration getKits() { return kits.getConfig(); }
+    public FileConfiguration getCooldownManagerConfig() { return this.cooldownManagerConfig.getConfig(); }
     public void salvarPlayerData() {
         playerData.saveConfig();
     }
+    public void salvarCooldownManagerConfig() { this.cooldownManagerConfig.saveConfig(); }
     public void salvarLocations() { locations.saveConfig(); }
     public void salvarWarpLocations(){
         warpLocations.saveConfig();
     }
+    public void salvarKits() { kits.saveConfig(); }
     // Responsavel por carregar os principais eventos do servidor
     private void carregarEventos(){
         Bukkit.getPluginManager().registerEvents(new EntrarSairEventos(),this);
@@ -105,6 +127,33 @@ public class System extends JavaPlugin {
         getCommand("listhome").setExecutor(new Listhome());
         getCommand("delhome").setExecutor(new DelHome());
         getCommand("home").setExecutor(new Home());
+        getCommand("kit").setExecutor(new Kit());
+    }
+
+    private void SalvarCooldown(){
+        FileConfiguration config = getCooldownManagerConfig();
+        List<String> cooldownInfo = new ArrayList<>();
+        cooldownManager.getPlayerCooldownRemanecente().forEach((identificador,cooldown) -> {
+            cooldownInfo.add(identificador+"/"+cooldown);
+        });
+        config.set("Cooldowns.kit",cooldownInfo);
+        salvarCooldownManagerConfig();
+    }
+
+    private void PegarCooldownArmazenado(){
+        FileConfiguration config = getCooldownManagerConfig();
+        List<String> stringPatch = config.getStringList("Cooldowns.kit");
+        for(String string : stringPatch){
+            try {
+                String[] index = string.split("/");
+                cooldownManager.addPlayerCooldownRemanecente(index[0], Long.parseLong(index[1]));
+            }catch (Exception ignore){
+            }
+        }
+    }
+
+    public CooldownManager getCooldownManager(){
+        return this.cooldownManager;
     }
 
     private void carregarStartMSG(){
