@@ -27,12 +27,12 @@ public class Kit implements CommandExecutor {
         if(!(s instanceof Player)) return false;
         Player p = (Player) s;
 
-        if(!p.hasPermission("System.criarkit")){
+        if(!p.hasPermission("System.kits")){
             MetodosSimples.enviarMSGeSom(p, ConfigPrincipal.sem_permissao, Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
         if(args.length == 0){
-            MetodosSimples.enviarMSGeSom(p,"§cVocê precisa dar o nome do kit! ex:/criarkit <nome>",Sound.ENTITY_VILLAGER_NO,1);
+            p.sendMessage("AQUI VAI ABRIR O MENU DE KITS <-");
             return false;
         }
         String kit_nome = args[0].toLowerCase();
@@ -42,6 +42,10 @@ public class Kit implements CommandExecutor {
                     ,Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
+        if(!p.hasPermission("System.kit."+kit_nome)){
+            MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_sem_perm,Sound.ENTITY_VILLAGER_NO,1);
+            return false;
+        }
         String diplay = config.getString("Kits."+kit_nome+".display");
         int cooldown = config.getInt("Kits."+kit_nome+".cooldown");
 
@@ -49,8 +53,10 @@ public class Kit implements CommandExecutor {
             cooldownManager.getCooldownList().put(kit_nome,cooldown);
         }
 
-        if(cooldownManager.VerificarSePlayerEstaComCooldown(p,kit_nome)){
-            p.sendMessage("Voce esta em cooldown! faltam "+cooldownManager.PegarTempoRestanteFormatado(p,kit_nome));
+        if(cooldownManager.VerificarSePlayerEstaComCooldown(p,kit_nome) && !p.hasPermission("System.skipcd")){
+            MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_em_cooldown
+                            .replace("%cooldown%",""+cooldownManager.PegarTempoRestanteFormatado(p,kit_nome))
+                    ,Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
 
@@ -66,15 +72,19 @@ public class Kit implements CommandExecutor {
             itemStack.setAmount(Integer.parseInt(index[1]));
             kit_items.add(itemStack);
         }
-
         kit_items.forEach(item -> {
             p.getInventory().addItem(item).forEach((integer, itemStack) ->{
                 if(itemStack != null) {
-                    p.sendMessage("&e"+itemStack.toString().replace("_","")+" Foram dropados no chao!");
+                    MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_sobre_peso
+                                    .replace("%item%",""+itemStack.getType().name())
+                                    .replace("_"," ")
+                            ,Sound.ENTITY_ITEM_BREAK,1);
                     p.getWorld().dropItemNaturally(p.getLocation(), itemStack).setOwner(p.getUniqueId());
                 }
             });
         });
+        MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_pego.replace("%kit_display%",""+diplay)
+                ,Sound.ENTITY_PLAYER_LEVELUP,1);
         cooldownManager.AdicionarCooldownPlayer(p,kit_nome);
         return true;
     }

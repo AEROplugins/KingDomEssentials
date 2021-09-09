@@ -92,6 +92,10 @@ public class ConfigPrincipal {
     public static String boas_vindas_title;
     public static String boas_vindas_subtitle;
     public static String kit_nao_existe;
+    public static String kit_em_cooldown;
+    public static String kit_pego;
+    public static String kit_sobre_peso;
+    public static String kit_sem_perm;
 
     // CARREGA O DADO DE TODAS AS STRINGS DA CONFIG
     public static void carregarDadosConfig(){
@@ -138,7 +142,10 @@ public class ConfigPrincipal {
         boas_vindas_title = converter("Boas-vindas.title");
         boas_vindas_subtitle = converter("Boas-vindas.sub-title");
         kit_nao_existe = converter("Menssagens-do-sistema.kit-nao-existe");
-
+        kit_sobre_peso = converter("Menssagens-do-sistema.kit-sobre-peso");
+        kit_em_cooldown = converter("Menssagens-do-sistema.kit-em-cooldown");
+        kit_pego = converter("Menssagens-do-sistema.kit-pego");
+        kit_sem_perm = converter("Menssagens-do-sistema.kit-sem-perm");
         // WARP GUI CARREGAMENTOS
 
         end_lore = converterLista("Gui-config.warp.end-lore");

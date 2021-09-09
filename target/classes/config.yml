@@ -22,7 +22,10 @@ Menssagens-do-sistema:
   proibido-marcar-home: "&cVoce nao pode marcar Home neste Mundo!"
   maximo-de-spawners: "&cEssa Regiao ja esta com o Maximo de Spawners!"
   kit-nao-existe: "&cEste Kit '%kit_display%' nao existe! verifique os kits no /menu!"
-
+  kit-em-cooldown: "&cEspere &4%cooldown% &cpara pegar este kit novamente!"
+  kit-pego: "&eVoce pegou o kit %kit_display% com sucesso!"
+  kit-sobre-peso: "&b%item% &9Caiu no Chao! &7(Seu Inventario esta Cheio)"
+  kit-sem-perm: "&cVoce nao tem permissao para usar este kit!"
 Boas-vindas:
   title: "&9KingDomRo"
   sub-title: "&7Seja bem-vindo!"

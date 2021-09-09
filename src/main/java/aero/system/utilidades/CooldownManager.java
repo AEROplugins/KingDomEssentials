@@ -61,7 +61,9 @@ public class CooldownManager {
         long hours = TimeUnit.SECONDS.toHours(seconds) - (day * 24);
         long minute = TimeUnit.SECONDS.toMinutes(seconds) - (TimeUnit.SECONDS.toHours(seconds) * 60);
         long second = TimeUnit.SECONDS.toSeconds(seconds) - (TimeUnit.SECONDS.toMinutes(seconds) * 60);
-
+        if(day == 0 && hours == 0 && minute == 0) return second + " segundos ";
+        if(day == 0 && hours == 0) return  minute+" minutos " + second + " segundos ";
+        if(day == 0) return hours + " horas " + minute + " minutos " + second + " segundos ";
         return day + " dias " + hours + " horas " + minute + " minutos " + second + " segundos ";
 
     }
