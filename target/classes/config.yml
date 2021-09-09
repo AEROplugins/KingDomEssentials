@@ -1,31 +1,31 @@
 Menssagens-do-sistema:
-  sem-permissao: '&cVoce nao tem Permissao!' #Msg de sem permissao geral de todos os comandos desse plugin
+  sem-permissao: '&cVocê não tem Permissão!' #Msg de sem permissao geral de todos os comandos desse plugin
   menssagen-cooldown: '&cEspere %cd% segundos para utilizar este comando denovo!' #Quando um comando com cooldown e usado
-  warp-nao-existe: '&cA warp ''%warp%'' nao existe! Abrindo lista..'
-  warp-teleport-msg: '&eVoce foi teleportado para a %warp%'
+  warp-nao-existe: '&cA warp ''%warp%'' não existe! Abrindo lista..'
+  warp-teleport-msg: '&eVocê foi teleportado para a %warp%'
   menu-warp-ao-abrir: '&eA lista de warps foi aberta!'
-  sethome-maximo-homes: '&eVoce bateu o Limite de homes!'
-  sethome-sem-argumentos: '&cVoce precisa dizer o nome da sua Home! Ex:/sethome casa1'
-  sethome-home-ja-existe: '&cEssa home ja existe! Delete-a e crie novamente caso queira mudar de lugar'
+  sethome-maximo-homes: '&eVocê bateu o Limite de homes!'
+  sethome-sem-argumentos: '&cVocê precisa dizer o nome da sua Home! Exemplo: /sethome casa1'
+  sethome-home-ja-existe: '&cEssa home já existe! Delete-a e crie novamente caso queira mudar de lugar'
   sethome-home-criada: "&eHome '%home%' criada com sucesso!"
-  sethome-home-criada-erro: "&cUm nome nao permitido foi colocado!"
-  listhome-mostrando-lista: '&eAbaixo estao todas as suas Homes:'
-  listhome-sem-homes: '&cVoce ainda nao marcou nenhuma Home!'
-  delhome-sem-homes: '&cVoce nao tem nenhuma home para excluir!'
+  sethome-home-criada-erro: "&cUm nome não permitido foi colocado!"
+  listhome-mostrando-lista: '&eAbaixo estão todas as suas Homes:'
+  listhome-sem-homes: '&cVocê ainda não marcou nenhuma Home!'
+  delhome-sem-homes: '&cVocê não tem nenhuma home para excluir!'
   delhome-sucesso: "&eA Home '%home%' foi excluida com sucesso!"
   delhome-erro: '&cErro ao deletar a sua Home!'
-  delhome-home-nao-existe: "&ca Home '%home%' nao existe!"
-  home-teleporte-msg: "&eVoce sera teletransportado para sua home em %cd% segundos"
-  home-nao-existe: "&cA Home '%home%' nao existe!"
+  delhome-home-nao-existe: "&ca Home '%home%' não existe!"
+  home-teleporte-msg: "&eVocê será teleportado para sua home em %cd% segundos"
+  home-nao-existe: "&cA Home '%home%' não existe!"
   home-argumento-errado: "&cUso correto: /home <nome>"
-  home-teleporte-sucesso: "&eVoce foi teleportado para a home '%home%'!"
-  proibido-marcar-home: "&cVoce nao pode marcar Home neste Mundo!"
-  maximo-de-spawners: "&cEssa Regiao ja esta com o Maximo de Spawners!"
-  kit-nao-existe: "&cEste Kit '%kit_display%' nao existe! verifique os kits no /menu!"
+  home-teleporte-sucesso: "&eVocê foi teleportado para a home '%home%'!"
+  proibido-marcar-home: "&cVocê não pode marcar Home neste Mundo!"
+  maximo-de-spawners: "&cEssa Regiao já esta com o Máximo de Spawners!"
+  kit-nao-existe: "&cEste Kit '%kit_display%' não existe! verifique os kits no /menu!"
   kit-em-cooldown: "&cEspere &4%cooldown% &cpara pegar este kit novamente!"
-  kit-pego: "&eVoce pegou o kit %kit_display% com sucesso!"
-  kit-sobre-peso: "&b%item% &9Caiu no Chao! &7(Seu Inventario esta Cheio)"
-  kit-sem-perm: "&cVoce nao tem permissao para usar este kit!"
+  kit-pego: "&eVocê pegou o kit %kit_display% com sucesso!"
+  kit-sobre-peso: "&b%item% &9Caiu no chão! &7(Seu inventário está cheio)"
+  kit-sem-perm: "&cVocê não tem permissão para usar este kit!"
 Boas-vindas:
   title: "&9KingDomRo"
   sub-title: "&7Seja bem-vindo!"
@@ -42,14 +42,14 @@ Npcs: #Coloque o nome do npc (tem que colocar os simbolos de cores tambem!)
 
 Warps-configs: # SERVE PARA TODAS AS WARPS
   sem-perm-warp: '&cApenas vips podem usar o /warps! procure os Npcs de viagem rápida'
-  delay-msg: "&eVoce sera teletransportado em %delay% segundo's"  #msg do delay do teleport
-  warp-sem-perm: "&cVoce nao pode ir nesta Warp!"
+  delay-msg: "&eVocê será teleportado em %delay% segundo's"  #msg do delay do teleport
+  warp-sem-perm: "&cVocê não pode ir nesta Warp!"
   cooldown: 5 #/warp cooldown de comando
   delay: 3  #delay para ir ate o warp
   vip-delay: 1 #delay do vip para ir ate a warp
 Menu-configs:
   abrir: "&eO Menu foi Aberto!"
-  delay-msg: "&eO Menu sera Aberto nos proximos %delay% segundos!"
+  delay-msg: "&eO Menu será aberto nos próximos %delay% segundos!"
   delay: 3 # VIP NAO TEM DELAY!
   cooldown: 5 #/menu cooldown
 
@@ -59,7 +59,7 @@ Menu-configs:
 Configs-Spawn:
   spawn-title-msg: '&9&lSpawn' #title de quando e teleportado para o spawn
   spawn-subtitle-msg: '&7Bem-vindo ao spawn' #subtitle de quando e teleportado para o spawn
-  spawn-delay-msg: "&eVoce ira para o Spawn em %delay% segundo's!" #/spawn delay msg
+  spawn-delay-msg: "&eVocê ira para o Spawn em %delay% segundo's!" #/spawn delay msg
   cooldown: 5 #/spawn cooldown de comando
   delay: 3 #delay para ir ate o spawn
   vip-delay: 1 #delay do vip para ir ate o spawn

@@ -128,6 +128,7 @@ public class System extends JavaPlugin {
         getCommand("delhome").setExecutor(new DelHome());
         getCommand("home").setExecutor(new Home());
         getCommand("kit").setExecutor(new Kit());
+        getCommand("verkit").setExecutor(new VerKit());
     }
 
     private void SalvarCooldown(){

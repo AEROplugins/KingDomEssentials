@@ -15,7 +15,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static aero.system.System.*;
 public class Kit implements CommandExecutor {
@@ -42,11 +41,15 @@ public class Kit implements CommandExecutor {
                     ,Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
+        if(p.getInventory().firstEmpty() == -1){
+            p.sendMessage("Seu inventario esta Cheio!");
+            return false;
+        }
         if(!p.hasPermission("System.kit."+kit_nome)){
             MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_sem_perm,Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
-        String diplay = config.getString("Kits."+kit_nome+".display");
+        String display = config.getString("Kits."+kit_nome+".display");
         int cooldown = config.getInt("Kits."+kit_nome+".cooldown");
 
         if(!cooldownManager.getCooldownList().containsKey(kit_nome)){
@@ -72,6 +75,15 @@ public class Kit implements CommandExecutor {
             itemStack.setAmount(Integer.parseInt(index[1]));
             kit_items.add(itemStack);
         }
+        DarKitAoPlayer(kit_items,p);
+        MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_pego.replace("%kit_display%",""+display)
+                ,Sound.ENTITY_PLAYER_LEVELUP,1);
+        cooldownManager.AdicionarCooldownPlayer(p,kit_nome);
+        return true;
+    }
+
+
+    public static void DarKitAoPlayer(ArrayList<ItemStack> kit_items, Player p){
         kit_items.forEach(item -> {
             p.getInventory().addItem(item).forEach((integer, itemStack) ->{
                 if(itemStack != null) {
@@ -83,9 +95,5 @@ public class Kit implements CommandExecutor {
                 }
             });
         });
-        MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_pego.replace("%kit_display%",""+diplay)
-                ,Sound.ENTITY_PLAYER_LEVELUP,1);
-        cooldownManager.AdicionarCooldownPlayer(p,kit_nome);
-        return true;
     }
 }

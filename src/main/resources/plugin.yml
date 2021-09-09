@@ -41,3 +41,5 @@ commands:
     aliases: casa
   kit:
     description: pega o kit
+  verkit:
+    description: da pra ver o kit kkk
