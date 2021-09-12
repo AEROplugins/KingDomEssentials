@@ -96,6 +96,10 @@ public class ConfigPrincipal {
     public static String kit_pego;
     public static String kit_sobre_peso;
     public static String kit_sem_perm;
+    public static String inventario_cheio;
+    public static String menu_kits_aberto;
+    public static String verkit_sem_argumento;
+    public static String verkit_kit_nao_existe;
 
     // CARREGA O DADO DE TODAS AS STRINGS DA CONFIG
     public static void carregarDadosConfig(){
@@ -146,6 +150,10 @@ public class ConfigPrincipal {
         kit_em_cooldown = converter("Menssagens-do-sistema.kit-em-cooldown");
         kit_pego = converter("Menssagens-do-sistema.kit-pego");
         kit_sem_perm = converter("Menssagens-do-sistema.kit-sem-perm");
+        inventario_cheio = converter("Menssagens-do-sistema.inventario-cheio");
+        menu_kits_aberto = converter("Menssagens-do-sistema.menu-kits-aberto");
+        verkit_kit_nao_existe = converter("Menssagens-do-sistema.verkit-kit-nao-existe");
+        verkit_sem_argumento = converter("Menssagens-do-sistema.verkit-sem-argumento");
         // WARP GUI CARREGAMENTOS
 
         end_lore = converterLista("Gui-config.warp.end-lore");

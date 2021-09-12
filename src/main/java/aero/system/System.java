@@ -39,6 +39,7 @@ public class System extends JavaPlugin {
     private WarpLocations warpLocations;
     private Locations locations;
     private CooldownManagerConfig cooldownManagerConfig;
+    private SectionKitConfig sectionKitConfig;
     @Override
     public void onEnable() {
         system = this;
@@ -49,6 +50,7 @@ public class System extends JavaPlugin {
         warpLocations = new WarpLocations();
         playerData = new PlayerData();
         locations = new Locations();
+        sectionKitConfig = new SectionKitConfig();
         kits = new Kits();
         ConfigPrincipal.carregarDadosConfig();
         carregarVaultDependencias();
@@ -88,6 +90,7 @@ public class System extends JavaPlugin {
         return playerData.getConfig();
     }
     public FileConfiguration getKits() { return kits.getConfig(); }
+    public FileConfiguration getSectionKit() { return sectionKitConfig.getConfig(); }
     public FileConfiguration getCooldownManagerConfig() { return this.cooldownManagerConfig.getConfig(); }
     public void salvarPlayerData() {
         playerData.saveConfig();
@@ -98,6 +101,7 @@ public class System extends JavaPlugin {
         warpLocations.saveConfig();
     }
     public void salvarKits() { kits.saveConfig(); }
+    public void salvarSectionKit() { sectionKitConfig.saveConfig(); }
     // Responsavel por carregar os principais eventos do servidor
     private void carregarEventos(){
         Bukkit.getPluginManager().registerEvents(new EntrarSairEventos(),this);

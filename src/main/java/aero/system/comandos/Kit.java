@@ -1,6 +1,7 @@
 package aero.system.comandos;
 
 import aero.system.config.ConfigPrincipal;
+import aero.system.guis.KitMenu;
 import aero.system.utilidades.CooldownManager;
 import aero.system.utilidades.MetodosSimples;
 import aero.system.utilidades.items.ItemBuilder;
@@ -31,7 +32,8 @@ public class Kit implements CommandExecutor {
             return false;
         }
         if(args.length == 0){
-            p.sendMessage("AQUI VAI ABRIR O MENU DE KITS <-");
+            new KitMenu(p).open(p);
+            MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.menu_kits_aberto,Sound.ENTITY_PLAYER_LEVELUP,1);
             return false;
         }
         String kit_nome = args[0].toLowerCase();
@@ -42,7 +44,7 @@ public class Kit implements CommandExecutor {
             return false;
         }
         if(p.getInventory().firstEmpty() == -1){
-            p.sendMessage("Seu inventario esta Cheio!");
+            MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.inventario_cheio,Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
         if(!p.hasPermission("System.kit."+kit_nome)){

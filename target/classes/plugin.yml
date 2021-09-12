@@ -40,4 +40,7 @@ commands:
     description: leva voce ate sua home
     aliases: casa
   kit:
+    aliases: kits
     description: pega o kit
+  verkit:
+    description: da pra ver o kit kkk

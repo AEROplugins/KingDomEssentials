@@ -39,6 +39,10 @@ public class ItemBuilder implements ItemSpecification<ItemBuilder>{
         itemStack = new ItemStack(material, quantity, (short) data);
         itemMeta = itemStack.getItemMeta();
     }
+    public ItemBuilder(ItemStack itemStack){
+        this.itemStack = itemStack;
+        this.itemMeta = itemStack.getItemMeta();
+    }
 
     @Override
     public ItemBuilder setDisplayName(String name) {

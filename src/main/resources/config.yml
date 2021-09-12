@@ -25,7 +25,12 @@ Menssagens-do-sistema:
   kit-em-cooldown: "&cEspere &4%cooldown% &cpara pegar este kit novamente!"
   kit-pego: "&eVocê pegou o kit %kit_display% com sucesso!"
   kit-sobre-peso: "&b%item% &9Caiu no chão! &7(Seu inventário está cheio)"
-  kit-sem-perm: "&cVocê não tem permissão para usar este kit!"
+  kit-sem-perm: "&cVocê não tem permissão para usar este kit!" # Depois daqui nao esta traduzido
+  inventario-cheio: "&cSeu Inventario esta Cheio!"
+  menu-kits-aberto: "&eMenu de kits foi Aberto!"
+  verkit-sem-argumento: "&cVoce precisa especificar o kit que voce quer ver!"
+  verkit-kit-nao-existe: "&cEste kit nao existe!"
+
 Boas-vindas:
   title: "&9KingDomRo"
   sub-title: "&7Seja bem-vindo!"

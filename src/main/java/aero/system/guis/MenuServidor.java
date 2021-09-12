@@ -53,6 +53,11 @@ public class MenuServidor extends Menu {
             MetodosSimples.tocarSom(p,Sound.ENTITY_PLAYER_LEVELUP,1);
             gui_protection = true;
         }
+        if(event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase(ConfigPrincipal.kits_nome)){
+            new KitMenu(p).open(p);
+            MetodosSimples.tocarSom(p,Sound.ENTITY_PLAYER_LEVELUP,1);
+            gui_protection = true;
+        }
     }
 
     private void criarItems(){

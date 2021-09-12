@@ -64,7 +64,7 @@ public class KitViewMenu extends Menu {
     }
 
     private void CarregarBordas(){
-        ItemStack vidro_cinza = new ItemBuilder(Material.LIGHT_GRAY_STAINED_GLASS_PANE)
+        ItemStack vidro_cinza = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE)
                 .setDisplayName("*")
                 .build();
         for(int i=36;i < 45;i++){
