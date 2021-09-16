@@ -100,6 +100,23 @@ public class ConfigPrincipal {
     public static String menu_kits_aberto;
     public static String verkit_sem_argumento;
     public static String verkit_kit_nao_existe;
+    public static String kits_menu_title;
+    public static String kit_membro;
+    public static String kit_vip1;
+    public static String kit_vip2;
+    public static String kit_vip3;
+    public static List<String> kit_vip1_lore = new ArrayList<>();
+    public static List<String> kit_vip2_lore = new ArrayList<>();
+    public static List<String> kit_vip3_lore = new ArrayList<>();
+    public static List<String> kit_membro_lore = new ArrayList<>();
+    public static String sem_cooldown;
+    public static String com_cooldown;
+    public static String com_perm;
+    public static String sem_perm;
+    public static String pegar_kit;
+    public static String cancelar_kit;
+    public static String sectionkit_voltar;
+    public static String menuStyle1_exit;
 
     // CARREGA O DADO DE TODAS AS STRINGS DA CONFIG
     public static void carregarDadosConfig(){
@@ -154,6 +171,7 @@ public class ConfigPrincipal {
         menu_kits_aberto = converter("Menssagens-do-sistema.menu-kits-aberto");
         verkit_kit_nao_existe = converter("Menssagens-do-sistema.verkit-kit-nao-existe");
         verkit_sem_argumento = converter("Menssagens-do-sistema.verkit-sem-argumento");
+        kits_menu_title = converter("Kits-menu.kits-menu-title");
         // WARP GUI CARREGAMENTOS
 
         end_lore = converterLista("Gui-config.warp.end-lore");
@@ -170,6 +188,25 @@ public class ConfigPrincipal {
         bricks_nome = converter("Gui-config.warp.bricks-name");;
         eventos_nome = converter("Gui-config.warp.eventos-name");;
         arena_nome = converter("Gui-config.warp.arena-name");;
+
+        // Kits Gui
+        String kits = "Kits-menu.";
+        kit_membro = converter(kits+"kit-membro");
+        kit_vip1 = converter(kits+"kit-vip1");
+        kit_vip2 = converter(kits+"kit-vip2");
+        kit_vip3 = converter(kits+"kit-vip3");
+        kit_vip1_lore = converterLista(kits+"kit-vip1-lore");
+        kit_vip2_lore = converterLista(kits+"kit-vip2-lore");;
+        kit_vip3_lore = converterLista(kits+"kit-vip3-lore");;
+        kit_membro_lore = converterLista(kits+"kit-membro-lore");
+        sem_cooldown = converter(kits+"sem-cooldown");
+        com_cooldown = converter(kits+"com-cooldown");
+        sem_perm = converter(kits+"sem-perm");
+        com_perm = converter(kits+"com-perm");
+        pegar_kit = converter(kits+"pegar-kit");
+        cancelar_kit = converter(kits+"cancelar-kit");
+        sectionkit_voltar = converter(kits+"sectionkit-voltar");
+        menuStyle1_exit = converter( kits+"menuStyle1-exit");
 
         // MENU GUI CARREGAMENTO
         player_lore = converterLista("Gui-config.menu.player_lore");

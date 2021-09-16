@@ -37,6 +37,9 @@ public class Kits {
    private void criarKitBase(){
         getConfig().createSection("Kits.exemplo");
         getConfig().set("Kits.exemplo.display","&cExemplo");
+        getConfig().set("Kits.exemplo.bloqueado",false);
+        getConfig().set("Kits.exemplo.gui-display","&cExemplo gui");
+        getConfig().set("Kits.exemplo.gui-lore",Arrays.asList("Description 1.0","Description 2.0"));
         getConfig().set("Kits.exemplo.cooldown", 30);
         getConfig().set("Kits.exemplo.items", Arrays.asList("STONE;25","1b;1"));
         getConfig().set("Kits.exemplo.utilizavel", 3);

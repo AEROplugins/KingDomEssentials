@@ -51,6 +51,10 @@ public class Kit implements CommandExecutor {
             MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.kit_sem_perm,Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
+        if(config.getBoolean("Kits."+kit_nome+".bloqueado")){
+            p.sendMessage("Esse kit esta BLOQUEADO no momento!");
+            return false;
+        }
         String display = config.getString("Kits."+kit_nome+".display");
         int cooldown = config.getInt("Kits."+kit_nome+".cooldown");
 

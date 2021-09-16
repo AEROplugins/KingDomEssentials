@@ -58,8 +58,40 @@ Menu-configs:
   delay: 3 # VIP NAO TEM DELAY!
   cooldown: 5 #/menu cooldown
 
-
-
+Kits-menu:
+  pegar-kit: "&aPegar Kit"
+  cancelar-kit: "&cCancelar"
+  sectionkit-voltar: "&eVoltar"
+  menuStyle1-exit: "&cIr para o Menu Principal"
+  sem-cooldown: "&aVocê pode Pegar!"
+  com-cooldown: "&fFaltam: &c%cd%"
+  com-perm: "&aVocê tem permissão para pegar. "
+  sem-perm: "&cVocê não tem permissão para pegar. "
+  kits-menu-title: "             &9Menu de Kits"
+  kit-membro: "&f      - ✦ &aKits Membros &f✦ -      "
+  kit-membro-lore:
+    - ""
+    - " &8* &7Aqui você pode coletar Kits &aBasicos "
+    - " &8* &7Para Iniciar no mundo da &aSobrevivência&7 "
+    - ""
+  kit-vip1: "&f      - ✦ &bKits Vips &f✦ -      "
+  kit-vip1-lore:
+    - ""
+    - " &8* &7Aqui você pode coletar Kits &bVips "
+    - " &8* &7Para Auxiliar no mundo de &aSobrevivência &7e &cPvP "
+    - ""
+  kit-vip2: "&f      - ✦ &cKits &fYou&ctubers &f✦ -      "
+  kit-vip2-lore:
+    - ""
+    - " &8* &7Aqui você pode coletar Kits &fYou&ctubers "
+    - " &8* &7Para Auxiliar na &3Criação de conteúdo "
+    - ""
+  kit-vip3: "&f      - ✦ &5Kits Especiais &f✦ -      "
+  kit-vip3-lore:
+    - ""
+    - " &8* &7Aqui você pode coletar Kits &5Especiais "
+    - " &8* &7Para Comemorar &5Eventos do Servidor "
+    - ""
 
 Configs-Spawn:
   spawn-title-msg: '&9&lSpawn' #title de quando e teleportado para o spawn

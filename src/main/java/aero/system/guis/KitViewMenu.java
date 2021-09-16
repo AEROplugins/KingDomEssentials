@@ -22,14 +22,16 @@ import java.util.ArrayList;
 public class KitViewMenu extends Menu {
 
     private final String kit;
+    private final String section;
     private ArrayList<ItemStack> kitItemStacks = new ArrayList<>();
     private final CooldownManager cooldownManager = getSystem().getCooldownManager();
     private final Player player;
 
-    public KitViewMenu(String kit, Player player) {
-        super("Kit '"+kit+"'view TESTE",5);
+    public KitViewMenu(String kit, Player player,String section) {
+        super("§8Conteúdo do Kit "+getSystem().getKits().getString("Kits."+kit+".display")+": ",5);
         this.kit = kit;
         this.player = player;
+        this.section = section;
         CarregarKitItemStacks();
     }
 
@@ -41,7 +43,10 @@ public class KitViewMenu extends Menu {
             Bukkit.dispatchCommand(player,"kit "+kit);
         }
         if(event.getCurrentItem().getType() == Material.RED_TERRACOTTA){
-            player.sendMessage("VAI VOLTAR NO MENU! <-- NAO ESTA PRONTO");
+            if(section == null) new KitMenu(player).open(player);
+            else new SectionKit(section,player).open(player);
+            gui_protection = true;
+            MetodosSimples.tocarSom(player,Sound.ENTITY_PLAYER_LEVELUP,1);
         }
     }
 
@@ -54,13 +59,13 @@ public class KitViewMenu extends Menu {
 
     private void CarregarBotoes(){ // 39 41
         ItemStack confirmar = new ItemBuilder(Material.LIME_TERRACOTTA)
-                .setDisplayName("PEGAR KIT")
+                .setDisplayName(ConfigPrincipal.pegar_kit)
                 .build();
         ItemStack cancelar = new ItemBuilder(Material.RED_TERRACOTTA)
-                .setDisplayName("CANCELAR")
+                .setDisplayName(ConfigPrincipal.cancelar_kit)
                 .build();
-        getInventory().setItem(39,cancelar);
-        getInventory().setItem(41,confirmar);
+        getInventory().setItem(41,cancelar);
+        getInventory().setItem(39,confirmar);
     }
 
     private void CarregarBordas(){

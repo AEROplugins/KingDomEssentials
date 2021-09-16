@@ -24,10 +24,11 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class MenuServidor extends Menu {
-    private static Player p = aero.system.comandos.Menu.getP();
+    private static Player p;
 
-    public MenuServidor() {
+    public MenuServidor(Player player) {
         super("          §9§lMenu principal      ",5);
+        this.p = player;
     }
 
     @Override

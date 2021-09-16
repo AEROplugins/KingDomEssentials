@@ -49,7 +49,7 @@ public class Menu implements CommandExecutor {
 
     private void AbrirMenuDoServidor(Player p){
         MetodosSimples.enviarMSGeSom(p,ConfigPrincipal.menu_principal_abrir,Sound.ENTITY_PLAYER_LEVELUP,1);
-        new MenuServidor().open(p);
+        new MenuServidor(p).open(p);
         System.gui_protection = true;
     }
 

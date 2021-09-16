@@ -1,5 +1,6 @@
 package aero.system.utilidades;
 
+import aero.system.config.ConfigPrincipal;
 import aero.system.utilidades.items.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
@@ -24,7 +25,7 @@ public class MenuStyls {
                 .setDisplayName("*")
                 .build();
         ItemStack barreira = new ItemBuilder(Material.BARRIER)
-                .setDisplayName("exit")
+                .setDisplayName(ConfigPrincipal.menuStyle1_exit)
                 .build();
         inventory.setItem(0,azul_escuro);
         inventory.setItem(1,azul_claro);

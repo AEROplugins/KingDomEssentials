@@ -12,6 +12,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import static aero.system.System.*;
 public class VerKit implements CommandExecutor {
+
+    private String section;
+
     @Override
     public boolean onCommand(CommandSender s, Command c, String label, String[] args) {
         if(!(s instanceof Player)) return false;
@@ -23,11 +26,15 @@ public class VerKit implements CommandExecutor {
         }
         FileConfiguration config = getSystem().getKits();
         String kit = args[0].toLowerCase();
+        FileConfiguration sectionConfig = getSystem().getSectionKit();
+        if(args.length == 2 && sectionConfig.getConfigurationSection("configs."+args[1]) != null){
+            section = args[1];
+        }else section = null;
         if(config.getConfigurationSection("Kits."+kit) == null){
             MetodosSimples.enviarMSGeSom(p, ConfigPrincipal.verkit_kit_nao_existe,Sound.ENTITY_VILLAGER_NO,1);
             return false;
         }
-        new KitViewMenu(kit,p).open(p);
+        new KitViewMenu(kit,p,section).open(p);
         MetodosSimples.tocarSom(p, Sound.ENTITY_PLAYER_LEVELUP,1);
         System.gui_protection = true;
         return false;
